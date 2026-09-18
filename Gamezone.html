@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cinzel:wght@400..900&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Orbitron:wght@400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&family=UnifrakturMaguntia&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- <style>
+        body{
+            justify-content: space-around;
+        }
+    </style>
+    <div id="p">
+        <h1 class="head"></h1>
+        <p id="empty"></p>
+    </div> -->
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, .65), rgba(0, 0, 0, .65)), url(v91h-w-py_i8vgFGg5RUre7URvhfNbBkQv7NoEDqDndXrrklWGm8tl3vANYGISMOwTdL4GR7lEgFofm4Bo8qI7VaNIqZFCRnt5pELEyESgJITz4KSeI39pcsr5tXSfwYVf8GIlaHP6GxYbOi9cEGWdCOkigsjKMr5FmNgyWVJyI.jfif);
+
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            color: white;
+            font-family: Black Ops One
+;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 60px;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: 900;
+        }
+
+        .logo span{
+            color: palevioletred;
+            
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        a {
+            font-size: 18px;
+            text-decoration: none;
+            color: white
+        }
+
+        a:hover {
+            color: #6c63ff;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: larger;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 30px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            border: none;
+            background-color: palevioletred;
+            transition: ease 0.3s;
+            color: white;
+            box-shadow:
+                0 4px 10px rgba(167, 161, 161, 0.3),
+                0 0 15px rgba(128, 0, 128, 0.5);
+        }
+
+        button:hover {
+            background-color: aqua;
+            transform: scale(1.1);
+
+            box-shadow: 0.3sease;
+        }
+        
+            
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.popup-content{
+    background-color: rgba(0, 0, 0, 0.742);
+   width: 90%;
+max-width: 500px;
+   border-radius: 12px;
+    text-align: center;
+    padding: 70px;
+    
+}
+
+
+ .popup-content{
+    animation: popupOpen 0.4s ease;
+     border: 2px solid #a855f7;
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+}  
+
+.one{
+    width: 30%;
+    margin-right: 10px;
+}
+
+
+
+@keyframes popupOpen{
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.pre-loader{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    gap: 5px;
+}
+
+.pre-loader .loading-dots{
+    display: flex;
+    gap: 7px;
+}
+
+.pre-loader .dots{
+    width: 10px;
+    height: 10px;
+    background-color: palevioletred;
+    border-radius: 50px;
+    animation: bounce 0.6s infinite alternate;
+}
+
+.pre-loader .dots:nth-child(2){
+    animation-delay: 0.2s;
+}
+
+.pre-loader .dots:nth-child(3){
+    animation-delay: 0.4s;
+}
+
+@keyframes bounce{
+    to{
+        transform: translatey(-15px);
+    }
+}
+
+.games-grid{
+    display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+gap: 20px;
+padding: 30px;
+}
+
+.games-grid img {
+  width: 70%;
+  height: 75%;
+  object-fit: cover;
+}
+.game-card{
+    transition: transform 0.3s ease;
+}
+.game-card:hover{
+transform: scale(1.2);
+} 
+    </style>
+
+
+
+    <section class="pre-loader">
+        <div class="loading-dots">
+            <div class="dots"></div>
+            <div class="dots"></div>
+            <div class="dots"></div>
+
+        </div>
+    </section>
+
+    
+
+    <header>
+        <div class="logo">Game<span>Zone!</span></div>
+        <nav><a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact us</a>
+            <a href="#">Buy us a coffee☕</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Play Without Limits</h1>
+        <p>
+            Discover the latest games, exclusive deals, and join <br>thousands of gamers from around the world.
+        </p>
+        <button id="Explore">Explore Games</button>
+    </section>
+
+  <div class="popup">
+
+    <div class="popup-content">
+
+        <h2>🎮 Welcome to GameZone!</h2>
+        <p>   🔥 Join Our Gaming Community to meet gamers around the world</p>
+
+        <button class="one" id="one">Join</button>
+        <button class="two"id="two">Close</button>
+
+    </div>
+
+</div>
+
+<section>
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/HoDqopWfgl8?si=LaV2r6SPTJjhbngm"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section> -->
+<!-- 
+<div class="card">
+    <img src="/coding-challenge/images (1).jfif" alt="icon">
+    <img src="/coding-challenge/images (2).jfif" alt="icon">
+    <img src="/coding-challenge/images (3).jfif" alt="icon">
+    <img src="/coding-challenge/images (4).jfif" alt="icon">
+    <img src="/coding-challenge/images (5).jfif" alt="icon">
+</div>
+<div class="card1">
+    <img src="/coding-challenge/images (6).jfif" alt="icon">
+    <img src="/coding-challenge/images (7).jfif" alt="icon">
+    <img src="/coding-challenge/images (8).jfif" alt="icon">
+    <img src="/coding-challenge/images (9).jfif" alt="icon">
+    <img src="/coding-challenge/images (10).jfif" alt="icon">
+</div>
+<div class="card1">
+    <img src="/coding-challenge/images (11).jfif" alt="icon">
+    <img src="/coding-challenge/images (12).jfif" alt="icon">
+    <img src="/coding-challenge/images (13).jfif" alt="icon">
+    <img src="/coding-challenge/images (14).jfif" alt="icon">
+    <img src="/coding-challenge/images (15).jfif" alt="icon">
+</div> -->
+
+<div class="games-grid">
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (1).jfif" alt="icon">
+        <h3>HITMAN: Absoution</h3>
+        <div class="game-info-bar">6.2 GB • 2007</div>
+    </div>
+
+    <div class="game-card">
+    <img src="/coding-challenge/images (2).jfif" alt="icon">
+        <h3>Hitman: Blood Money</h3>
+        <div class="game-info-bar">5 GB • 2006</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (3).jfif" alt="icon">
+        <h3>Grand Theft Auto IV</h3>
+        <div class="game-info-bar">16 GB • 2008</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (4).jfif" alt="icon">
+        <h3>God of War Ragnarök</h3>
+        <div class="game-info-bar">109 GB • 2022</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (5).jfif" alt="icon">
+        <h3>God of War II</h3>
+        <div class="game-info-bar">9 GB • 2007</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (6).jfif" alt="icon">
+        <h3>Dishonored</h3>
+        <div class="game-info-bar">9 GB • 2012</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (7).jfif" alt="icon">
+        <h3>Dishonored 2</h3>
+        <div class="game-info-bar">60 GB • 2016</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (8).jfif" alt="icon">
+        <h3>Grand Theft Auto: San Andreas</h3>
+        <div class="game-info-bar">4.7 GB • 2004</div>
+    </div>
+
+     <div class="game-card">
+        <img src="/coding-challenge/images (9).jfif" alt="icon">
+        <h3>Farcry</h3>
+        <div class="game-info-bar">4 GB • 2004</div>
+    </div>
+
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (10).jfif" alt="icon">
+        <h3>Farcry 2</h3>
+        <div class="game-info-bar">3.5 GB • 2008</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (11).jfif" alt="icon">
+        <h3>farcry 3</h3>
+        <div class="game-info-bar">15 GB • 2012</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (12).jfif" alt="icon">
+        <h3>Farcry 4</h3>
+        <div class="game-info-bar">30 GB • 2014</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (13).jfif" alt="icon">
+        <h3>Farcry 5</h3>
+        <div class="game-info-bar">40 GB • 2018</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (14).jfif" alt="icon">
+        <h3>Farcry 6</h3>
+        <div class="game-info-bar">60 GB • 2021</div>
+    </div>
+
+    <div class="game-card">
+        <img src="/coding-challenge/images (15).jfif" alt="icon">
+        <h3>Dishonored</h3>
+        <div class="game-info-bar">9 GB • 2012</div>
+    </div>
+
+    
+</div>
+
+
+
+<script>
+
+    const preloader = document.querySelector(" .pre-loader")
+
+    window.onload = function(){
+        preloader.style.display = "none"
+    }
+
+    
+
+</script>
+
+    <script src="asy.js"></script>
+</body>
+
+</html>
